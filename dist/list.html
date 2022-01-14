@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        The List 
+    </title>
+
+    <link rel="icon" type="img/png" href="img/favicons/favicon-32x32.png">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/glide-core.css">
+    <link rel="stylesheet" href="css/glide-theme.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+</head>
+
+<body id="listBody">
+
+        <div class="loader-bg">
+            <div class="loader1">
+                <div> LOADING </div>
+            </div>
+
+            <div class="loader2">
+                <div> LOADING </div>
+            </div>
+        </div>  
+ 
+    <div class="cursor">
+        <div id="ViewPage">
+            Visit Page
+        </div>
+    </div>
+
+    <header id="listHeader">
+        <nav>
+            <h1> <a  class="listLogo listLogo-anim" href="index.html">[PSSN.INC]</a></h1>
+            <ul class="listnav-anim">
+                <li id="crewNav">
+                    <a href="SHPage.html">
+                        The Crew 
+                    </a>
+                </li>
+                <li id="listNav">
+                    <a href="list.html">
+                        The List
+                    </a>
+                </li>
+                <li id="galleryNav">
+                    <a href="gallery.html"> 
+                    Gallery
+                </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="listContent">
+        <h2 id="listH2"> The List </h2>
+        <div id="listIntro">
+            <div class="listIntroContentTemplate"> 
+                <p class="listP"> This list is used to rank each character of One Piece. These ratings are subjective to change as everybody has different opinions on
+                who truly is the strongest. With that said, I believe each character that I have below deserve to be where they are as of now. If you believe a character
+                to be stronger than another please don't be offended, This is just a fun website I decided to create to learn more about Javascript
+                Libraries. Each character will be rated from 0-100.
+                
+                
+
+                </p>
+            </div>
+        </div>
+
+
+    <div id="listList">
+        <div id="yonkoListBtn" class="listBtn">
+            <div id="yonkoListTitle" class="listTitle"> Yonko </div>
+            <div class="toggleList">
+
+                <div id="yonkoToggle" class="vShape"></div>
+            </div>
+        </div>
+
+        <div id="yonkoList" class="carousel">
+
+            <div id="yonkoL1" class="carouselLayout">
+                <div class="yonkolistItem">
+                    <h3 class="listRating"> 100 </h3>
+                    <h4 class="listCharName"> Red-Haired Shanks </h4>
+                    <div class="listImg">
+                        <img src="img/ListPage/Yonko/Shanks.png" alt="Red Hair Shanks" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                    </div>
+                </div>
+
+                <div class="yonkolistItem">
+                    <h3 class="listRating"> 100 </h3>
+                    <h4 class="listCharName"> Kaido of the Beasts </h4>
+                    <div class="listImg">
+                        <img src="img/ListPage/Yonko/Kaido.png" alt="Kaido" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                    </div>
+                </div>
+
+                <div class="yonkolistItem">
+                    <h3 class="listRating"> 100 </h3>
+                    <h4 class="listCharName"> Big Mom </h4>
+                    <div class="listImg">
+                        <img src="img/ListPage/Yonko/bigMom.png" alt="Big Mom" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                    </div>
+                </div>
+
+                <div class="yonkolistItem">
+                    <h3 class="listRating"> 100 </h3>
+                    <h4 class="listCharName"> Blackbeard </h4>
+                    <div class="listImg">
+                        <img src="img/ListPage/Yonko/Blackbeard.png" alt="Blackbeard" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="admiralListBtn" class="listBtn listBtn-margintop">
+            <div id="admiralListTitle" class="listTitle"> Admiral </div>
+            <div class="toggleList">
+                <div id="admiralToggle" class="vShape"></div>
+            </div>
+        </div>
+
+        <div id="admiralList" class="glide carousel">
+
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <li class="glide__slide">
+                        <div class="listItem">
+                            <h3 class="listRating"> 95 </h3>
+                            <h4 class="listCharName"> Sakazuki Akainu </h4>
+                            <div class="listImg">
+                                <img src="img/ListPage/Admiral/Akainu.png" alt="Akainu" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="listItem">
+                            <h3 class="listRating"> 95 </h3>
+                            <h4 class="listCharName"> Monkey D. Garp </h4>
+                            <div class="listImg">
+                                <img src="img/ListPage/Admiral/Garp.png" alt="Monkey D. Garp" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                            </div>
+                        </div>
+
+                    </li>
+                    <li class="glide__slide">
+                        <div class="listItem">
+                            <h3 class="listRating"> 94.5 </h3>
+                            <h4 class="listCharName"> Sengoku The Buddha </h4>
+                            <div class="listImg">
+                                <img src="img/ListPage/Admiral/Sengoku.png" alt="Sengoku The Buddha" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="listItem">
+                            <h3 class="listRating"> 94 </h3>
+                            <h4 class="listCharName"> Kuzan Aokiji </h4>
+                            <div class="listImg">
+                                <img src="img/ListPage/Admiral/Aokiji.png" alt="Kuzan Aokiji" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="listItem">
+                            <h3 class="listRating"> 93 </h3>
+                            <h4 class="listCharName"> Boralino Kizaru </h4>
+                            <div class="listImg">
+                                <img src="img/ListPage/Admiral/Kizaru.png" alt=" Boralino Kizaru " style="max-width: 100%; width: 100%; height: 100%;" draggable="false">
+                            </div>
+                        </div>
+
+                    </li>
+                    <li class="glide__slide">
+                        <div class="listItem">
+                            <h3 class="listRating"> 93 </h3>
+                            <h4 class="listCharName"> Silvers Rayleigh </h4>
+                            <div class="listImg">
+                                <img src="img/ListPage/Admiral/Rayleigh.png" alt="Silvers Rayleigh" style="max-width: 100%; width: 100%; height: 100%;" draggable="false">
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="glide__slide">
+                        <div class="listItem">
+                            <h3 class="listRating"> 92 </h3>
+                            <h4 class="listCharName"> Issho Fujitora </h4>
+                            <div class="listImg">
+                                <img src="img/ListPage/Admiral/Issho.png" alt="Issho Fujitora " style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                            </div>
+                        </div>
+
+                    </li>
+                    <li class="glide__slide">
+                        <div class="listItem">
+                            <h3 class="listRating"> 92 </h3>
+                            <h4 class="listCharName"> Dracule Mihawk </h4>
+                            <div class="listImg">
+                                <img src="img/ListPage/Admiral/Mihawk.png" alt="Dracule Mihawk " style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left glidearrow" data-glide-dir="<"> &lt; </button>
+                <button class="glide__arrow glide__arrow--right glidearrow" data-glide-dir=">"> &gt;</button>
+            </div>
+        </div>
+
+        <!-- Warlord Start -->
+        <div id="warlordListBtn" class="listBtn listBtn-margintop">
+            <div id="warlordListTitle" class="listTitle"> Warlord </div>
+            <div class="toggleList">
+                <div id="warlordToggle" class="vShape"></div>
+            </div>
+        </div>
+
+        <div id="warlordList" class="glide carousel">
+            <div class="carouselLayout">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 89.5 </h3>
+                                <h4 class="listCharName"> Marco The Phoenix </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Marco.png" alt="Marco The Phoenix" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 88 </h3>
+                                <h4 class="listCharName"> Sabo </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Sabo.png" alt="Sabo" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 87 </h3>
+                                <h4 class="listCharName"> Monkey D. Luffy </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Luffy.png" alt="Monkey D. Luffy" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 87 </h3>
+                                <h4 class="listCharName"> Charlotte Katakuri  </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Katakuri.png" alt="Charlotte Katakuri" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 86 </h3>
+                                <h4 class="listCharName"> Shiryu of the Rain </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Shiryu.png" alt="Shiryu of the Rain " style="max-width: 100%; width: 100%; height: 100%;" draggable="false">
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 86 </h3>
+                                <h4 class="listCharName"> Magellan </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Magellan.png" alt="Magellan " style="max-width: 100%; width: 100%; height: 100%;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 84 </h3>
+                                <h4 class="listCharName"> Portgas D. Ace </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Ace.png" alt="Portgas D. Ace" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 83 </h3>
+                                <h4 class="listCharName">Portgas D. Ace </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Jozu.png" alt="Portgas D. Ace" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 82 </h3>
+                                <h4 class="listCharName"> Charlotte Smoothie </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Smoothie.png" alt="Charlotte Smoothies" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 81 </h3>
+                                <h4 class="listCharName"> Donquixote Doflamingo </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Doffy.png" alt="Donquixote Doflamingo " style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 80.5 </h3>
+                                <h4 class="listCharName"> Bartholomew Kuma </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Kuma.png" alt=" Bartholomew Kuma" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 80 </h3>
+                                <h4 class="listCharName"> Trafalgar Law </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Law.png" alt="Trafalgar Laws" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 79.5 </h3>
+                                <h4 class="listCharName"> Enel </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Eneru.png" alt="Enel" style="max-width: 100%; width: 100%; height: 100%;" draggable="false">
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 79 </h3>
+                                <h4 class="listCharName"> Charlotte Cracker </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Cracker.png" alt="Charlotte Cracker" style="max-width: 100%; width: 100%; height: 100%;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 79 </h3>
+                                <h4 class="listCharName"> Jinbe </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Jinbe.png" alt="Jinbe" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 79 </h3>
+                                <h4 class="listCharName"> Roronoa Zoro </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Zoro.png" alt=" Roronoa Zoro" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating">   77 </h3>
+                                <h4 class="listCharName"> Jesus Burgess </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Jesus.png" alt="Jesus Burgess" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 77 </h3>
+                                <h4 class="listCharName"> Uroge </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Uroge.png" alt="Uroge " style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 77 </h3>
+                                <h4 class="listCharName"> Eustass Kid </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Kidd.png" alt="Eustass Kid" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 76.5 </h3>
+                                <h4 class="listCharName"> Crocodile </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Crocodile.png" alt="Crocodile" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 76 </h3>
+                                <h4 class="listCharName"> Emporio Ivankov  </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Ivankov.png" alt="Emporio Ivankov " style="max-width: 100%; width: 100%; height: 100%;" draggable="false">
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 76 </h3>
+                                <h4 class="listCharName"> Boa Hancock</h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Hancock.png" alt="Boa Hancock" style="max-width: 100%; width: 100%; height: 100%;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 75.5 </h3>
+                                <h4 class="listCharName"> Vinsmoke Sanji </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Sanji.png" alt=" Vinsmoke Sanji" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 75 </h3>
+                                <h4 class="listCharName"> Gecko Moria </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/Warlord/Moriah.png" alt="Gecko Moria" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left glidearrow" data-glide-dir="<"> &lt; </button>
+                    <button class="glide__arrow glide__arrow--right glidearrow" data-glide-dir=">">&gt;</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Below Warlord Start -->
+        <div id="blwWarlordListBtn" class="listBtn listBtn-margintop">
+            <div id="blwWarlordListTitle" class="listTitle"> Below Warlord </div>
+            <div class="toggleList">
+                <div id="blwWarlordToggle" class="vShape"></div>
+            </div>
+        </div>
+
+        <div id="blwWarlordList" class="glide carousel">
+            <div class="carouselLayout">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 74 </h3>
+                                <h4 class="listCharName"> Rob Lucci </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/Lucci.png" alt="Rob Lucci" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 74 </h3>
+                                <h4 class="listCharName"> Bege Capone </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/Capone.png" alt="Bege Capone " style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 74 </h3>
+                                <h4 class="listCharName"> X Drake </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/XDrake.png" alt="X Drake" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 73 </h3>
+                                <h4 class="listCharName"> Scratchman Apo </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/Apo.png" alt="Scratchman Apo" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 72.5 </h3>
+                                <h4 class="listCharName"> Cavendish </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/Cavendish.png" alt="Cavendish" style="max-width: 100%; width: 100%; height: 100%;" draggable="false">
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 72.5 </h3>
+                                <h4 class="listCharName"> Smoker </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/Smoker.png" alt="Smoker" style="max-width: 100%; width: 100%; height: 100%;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 72 </h3>
+                                <h4 class="listCharName"> Basil Hawkins </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/Hawkins.png" alt="Basil Hawkins" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 72 </h3>
+                                <h4 class="listCharName"> Bartolomeo the Cannibal </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/Bartolomeo.png" alt="Bartolomeo the Cannibal" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 71 </h3>
+                                <h4 class="listCharName"> Caesar Clown </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/Caesar.png" alt="Caesar Clown" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 70 </h3>
+                                <h4 class="listCharName"> Nico Robin </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/Robin.png" alt=" Nico Robin" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 70 </h3>
+                                <h4 class="listCharName"> Franky </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/Franky.png" alt="Franky" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 69 </h3>
+                                <h4 class="listCharName"> Brook </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/Brook.png" alt="Soul King Brook" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 69 </h3>
+                                <h4 class="listCharName"> Hordy Jones </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/Hordy.png" alt="Hordy Jones " style="max-width: 100%; width: 100%; height: 100%;" draggable="false">
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 68 </h3>
+                                <h4 class="listCharName"> Don Sai </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/Sai.png" alt="Don Sai" style="max-width: 100%; width: 100%; height: 100%;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 67 </h3>
+                                <h4 class="listCharName"> Warrior Leo </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/Leo.png" alt="Warrior Leo" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 66 </h3>
+                                <h4 class="listCharName"> Destruction Cannon Ideo </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/Ideo.png" alt="Destruction Cannon Ideo" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 66 </h3>
+                                <h4 class="listCharName"> Hajrudin </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/Hajrudin.png" alt="Hajrudin " style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating">  65.5 </h3>
+                                <h4 class="listCharName"> Usopp </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/Usopp.png" alt="Usopp" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating">  65 </h3>
+                                <h4 class="listCharName"> Tony Tony Chopper </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/Chopper.png" alt="Chopper" style="max-width: 100%; width: 100%; height: 100%;" draggable="false">
+                                </div>
+                            </div>
+
+                        </li>
+
+
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating">  65 </h3>
+                                <h4 class="listCharName"> Buggy The Clown </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/Buggy.png" alt="Buggy The Clown" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="glide__slide">
+                            <div class="listItem">
+                                <h3 class="listRating"> 64 </h3>
+                                <h4 class="listCharName"> Nami </h4>
+                                <div class="listImg">
+                                    <img src="img/ListPage/blwWarlord/Nami.png" alt="Nami" style="max-width: 100%; width: 100%; height: 100%;;" draggable="false">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left glidearrow" data-glide-dir="<"> &lt; </button>
+                    <button class="glide__arrow glide__arrow--right glidearrow" data-glide-dir=">">&gt;</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="js/List.js">
+    </script>
+    <script>
+        let slider = document.querySelectorAll('.glide'); 
+        Array.from(slider).map(function(sliderE) {
+            var newSlider = new Glide(sliderE, {
+                type: 'slider',
+                perView: '4',
+                focusAt: '0',
+            });
+            newSlider.mount();
+        });
+    </script>
+</body>
+
+</html>

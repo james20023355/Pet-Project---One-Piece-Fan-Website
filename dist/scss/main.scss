@@ -1,0 +1,2097 @@
+@import './OPVariables';
+
+
+@font-face {
+	src: url(../fonts/leaguespartan-bold-webfont.woff2)format('woff2');
+	font-family: LeagueSpartan;
+}
+@font-face {
+	src: url(../fonts/librebaskerville-regular-webfont.woff2) format('woff2');
+	font-family: LibreBask;
+}
+
+@font-face {
+	src: url(../fonts/helvetica_neu_bold-webfont.woff2) format('woff2');
+	font-family: HelveticaNeueBold;
+}
+@font-face {
+	src: url(../fonts/helveticaneue_medium-webfont.woff2)format('woff2');
+	font-family: HelveticaNeueMedium;
+}
+@font-face {
+	src: url(../fonts/helveticaneue-webfont.woff2)format('woff2');
+	font-family: HelveticaNeue;
+}
+@font-face {
+	src: url(../fonts/helveticaneue_light-webfont.woff2)format('woff2');
+	font-family: HelveticaNeueLight;
+}
+@function size($size) {
+	@return map-get($font-sizes, $size);
+}
+
+@mixin floatleft {
+	position: relative;
+	float:left;
+}
+
+@mixin center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+:focus {
+	outline: none;
+}
+
+// Loader Animations
+@keyframes loader-bgAnim {
+	0% {
+		transform: translate3d(0px, 0px, 0px);
+	}
+	100% {
+		transform: translate3d(0px, -1000px, 0px);
+	}
+}
+@keyframes loader1anim {
+	0% {
+		width: 60%;
+	}
+	25% {
+		width: 40%;
+	}
+	50% {
+		width: 30%;
+	}
+	75% {
+		width: 10%;
+	}
+	100% {
+		width: 0%;
+	}
+}
+
+// index.html page
+.cursor {
+	cursor: none;
+	pointer-events: none;
+	padding: 5px;
+	z-index: 9999;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	background: white;
+	transition: transform 0.2s linear;
+	@include center();
+}
+
+
+#ViewPage {
+	font-size: 0.15vw;
+	font-family: LeagueSpartan;
+	text-transform: uppercase;
+	display: none;
+}
+
+
+// Cursor Changes
+.nav-hover {
+	transform: scale(8);
+	mix-blend-mode: difference;
+	background: white;
+	transition: transform 0.2s linear;
+}
+
+.heading-hover {
+	transform: scale(20);
+	mix-blend-mode: difference;
+	background: white;
+	transition: transform 0.2s linear;
+}
+
+.lg-hover {
+	transform: scale(4);
+	width: 2.3%;
+	mix-blend-mode: difference;
+	border-radius: 0%;
+	background: $gold;
+	transition: transform 0.2s linear;
+}
+
+.up-button-hover {
+	background: none;
+	border-radius: 0%;
+	padding: 0;
+	width: 11px;
+	height: 11px;
+	border-bottom: 1px solid white;
+	border-right: 1px solid white;
+	transform: rotate(225deg);
+	transition: transform 0.1s ease-in;
+}
+
+.down-button-hover {
+	padding: 0;
+	background: none;
+	width: 11px;
+	height: 11px;
+	border-radius: 0%;
+	border-bottom: 1px solid white;
+	border-right: 1px solid white;
+	transform: rotate(45deg);
+	transition: transform 0.2s ease-in;
+}
+
+body {
+	overflow: hidden;
+}
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+	cursor: none;
+}
+
+html {
+	background-color: $darkblack;
+	scroll-behavior: smooth;
+}
+
+#mainfp {
+	max-height: 1500px;
+	height: 1500px;
+	max-width: 100%;
+	background-color: $darkblack;
+}
+
+#headerLandingPage {
+	// Header items
+
+	h2,
+	h3 {
+		width: initial;
+		font-family: LeagueSpartan;
+		font-size: 12vw;
+		color: white;
+		z-index: 1;
+	}
+
+	h2 {
+		width: 100%;
+		color: white;
+		height: 200px;
+	}
+
+	.h2-anim {
+		animation: LoadH2 3.2s;
+	}
+
+	h3 {
+		height: 200px;
+		width: 100%;
+		color: white;
+	}
+
+	.h3-anim {
+		animation: LoadH3 3.2s;
+	}
+
+	#webtitle {
+		@include floatleft();
+		height: auto;
+		margin-left: 100px;
+		z-index: 99;
+	}
+
+	#fanMade {
+		@include floatleft();
+		margin-top: 30%;
+		margin-left: 5%;
+		max-width: 465px;
+		border-right: 3px solid $gold;
+		color: $gold;
+		font-family: LibreBask;
+		font-size: 2vw;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	.fm-anim {
+		animation: loadFanMade 1s steps(50, end) 1s 1 normal both, indicatoranimation 1s steps(30, end) infinite;
+	}
+}
+
+#headerfp {
+	width: 100%;
+	height: 1000px;
+}
+
+// Logo Found in the nav
+.logo {
+	position: fixed;
+	float: left;
+	z-index: 2;
+	color: $gold;
+	font-family: LeagueSpartan;
+	padding-left: 50px;
+	padding-top: 10px;
+	transition: color 1s ease-in;
+}
+.logo-anim {
+	animation: LoadLogo 3s;
+}
+
+nav {
+	padding-top: 15px;
+	width: 100%;
+	height: 75px;
+	background-color: $darkblack;
+	@include floatleft();
+
+	ul,
+	li {
+		font-family: 'Roboto', sans-serif;
+		display: inline-block;
+		border: none;
+		list-style: none;
+		font-size: size(h2);
+	}
+
+	ul {
+		float: right;
+		padding-top: 20px;
+	}
+	ul:hover {
+		cursor: none !important;
+	}
+	.nav-anim {
+		animation: loadNavigation 1s linear,
+		rotate 4s linear 2s infinite;
+	}
+	li {
+		margin-right: 50px;
+	}
+
+	a {
+		font-family: Roboto;
+		z-index: 1;
+		color: white;
+		text-decoration: none;
+	}
+	a:hover {
+		cursor: none !important;
+	}
+}
+
+.slideshow-container {
+	width: 700px;
+	height: auto;
+	@include floatleft();
+	margin: auto;
+	padding-left: 200px;
+	padding-top: 50px;
+	filter: blur(0px);
+	z-index: 1;
+
+	img {
+		border-radius: 50%;
+		animation: frameAnim 8s;
+	}
+}
+
+.slideshow-anim {
+	animation: loadImage 4s;
+}
+
+.slides {
+	display: none;
+	width: 700px;
+	opacity: 0.9;
+}
+
+.down-button {
+	float: left;
+	color: white;
+	text-decoration: none;
+	background: $darkblack;
+	width: 100%;
+	height: 200px;
+	cursor: none;
+	margin-top: 10px;
+	text-align: center;
+	padding-top: 75px;
+	font-family: Roboto;
+	font-size: size(p1);
+	text-transform: uppercase;
+}
+
+/* end of header */
+main {
+	height: 1000px;
+	width: 100%;
+	float: left;
+}
+
+#brookaside {
+	padding-top: 190.5px;
+	background-color: $gold;
+	float: left;
+	max-width: 20%;
+	width: 20%;
+	height: 100%;
+}
+#title1 {
+	text-transform: uppercase;
+	color: white;
+	position: absolute;
+	font-family: LeagueSpartan;
+	font-size: 2vw;
+	top: 350px;
+	left: 85px;
+}
+
+.select {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: black;
+	opacity: 0;
+}
+
+#fp1 {
+	margin: 0;
+	float: left;
+	max-width: 100%;
+	width: 100%;
+	height: 100%;
+	transition: background-color 1s ease-in;
+	background: $darkergrey;
+
+	.up-button {
+		@include floatleft();
+		z-index: 1;
+		width: 75%;
+		height: 40px;
+		cursor: none;
+		background: $darkblack;
+	}
+}
+
+#fp1sec2 {
+	height: 100%;
+	width: 100%;
+	text-align: justify;
+}
+
+//Main info
+#fp1sec2main {
+	height: 100%;
+	width: 75%;
+	float: left;
+	background: $darkblack;
+}
+
+#StrawHat {
+	float: left;
+	position: absolute;
+	display: none;
+	width: 70%;
+	height: 100%;
+	padding-top: 40px;
+	padding-left: 30px;
+	animation: selectLoad 1s;
+	background-color: $darkblack;
+
+	h4 {
+		width: 40%;
+		color: white;
+		text-transform: uppercase;
+		font-size: 1.7vw;
+		font-family: LeagueSpartan;
+	}
+
+	.subtitle {
+		color: $gold;
+		font-size: 1vw;
+		text-transform: uppercase;
+		font-family: LibreBask;
+	}
+}
+
+#Yonko {
+	float: left;
+	position: absolute;
+	display: none;
+	width: 70%;
+	height: 100%;
+	padding-top: 40px;
+	padding-left: 30px;
+	animation: selectLoad 1s;
+
+	h4 {
+		color: white;
+		text-transform: uppercase;
+		font-size: 1.7vw;
+		font-family: LeagueSpartan;
+	}
+
+	.subtitle {
+		color: $gold;
+		font-size: 1vw;
+		text-transform: uppercase;
+		font-family: LibreBask;
+	}
+
+	p {
+		height: 70%;
+		width: 100%;
+	}
+}
+#Moments {
+	float: left;
+	position: absolute;
+	display: none;
+	width: 70%;
+	height: 100%;
+	padding-top: 40px;
+	padding-left: 30px;
+	animation: selectLoad 1s;
+
+	h4 {
+		color: white;
+		text-transform: uppercase;
+		font-size: 1.7vw;
+		font-family: LeagueSpartan;
+	}
+
+	.subtitle {
+		color: $gold;
+		font-size: 1vw;
+		text-transform: uppercase;
+		font-family: LibreBask;
+	}
+
+	p {
+		height: 70%;
+		width: 100%;
+	}
+}
+
+.headingTemplateFP {
+	width: 100%;
+	height: 10%;
+	float: left;
+}
+
+.contentTemplateFP {
+	width: 100%;
+	height: 80%;
+}
+
+.articleTemplateFP {
+	width: 35%;
+	height: 100%;
+	float: left;
+}
+
+.articleHeadingFP {
+	color: $lightergold;
+	width: 100%;
+	height: 7%;
+	float: left;
+	font-family: LeagueSpartan;
+	font-size: 1vw;
+	padding-top: 15px;
+	padding-left: 20px;
+	text-transform: uppercase;
+}
+
+.paragraphTemplateFP {
+	padding-left: 23px;
+	padding-right: 23px;
+	text-align: left;
+	width: 100%;
+	height: 53%;
+	float: left;
+	color: white;
+	font-family: LibreBask;
+	font-size: 0.75vw;
+}
+
+.imgTemplateFP {
+	width: 65%;
+	height: 100%;
+	float: left;
+	display: flex;
+	justify-content: center;
+}
+
+.imgBtnTemplateFP {
+	width: 25%;
+	height: 100%;
+	background: $darkergrey;
+	float: left;
+}
+.btnTemplateFP {
+	position: absolute;
+	width: 10%;
+	height: 5%;
+	background: none;
+	border: none;
+}
+
+.slct-PLoad {
+	animation: selectPLoad 0.3s linear;
+}
+
+.slct-H5Load {
+	animation: selectH5Load 0.3s linear;
+}
+
+.slct-imgLoad {
+	animation: selectimgLoad 0.3s linear;
+}
+
+.slct-titleLoad {
+	animation: selectTitleLoad 0.3s linear;
+}
+
+.slct-subtitleLoad {
+	animation: selectSubtitleLoad 0.3s linear;
+}
+// Image Sizes
+#strawHatImgContainerFP {
+	width: 80%;
+	height: 80%;
+	float: left;
+	img {
+		border-radius: 20px;
+	}
+}
+
+#listImgContainerFP {
+	width: 80%;
+	height: 80%;
+	float: left;
+	img {
+		border-radius: 20px;
+	}
+}
+
+#galleryImgContainerFP {
+	width: 80%;
+	height: 80%;
+	float: left;
+	img {
+		border-radius: 20px;
+	}
+}
+
+.slct-imgHover {
+	padding: 10px;
+	width: 20px;
+	height: 20px;
+	transform: scale(8);
+	background: white;
+	transition: transform 0.1s linear;
+	mix-blend-mode: luminosity;
+}
+// Selection
+#fp1sec2select {
+	width: 25%;
+	height: 100%;
+	float: left;
+	text-transform: uppercase;
+	background: $darkergrey;
+}
+
+.setSelect {
+	width: 100%;
+	height: 15%;
+}
+
+.selectBtn {
+	background: $darkergrey;
+	text-align: left;
+	@include center();
+	color: white;
+	width: 100%;
+	height: 100%;
+	font-family: LeagueSpartan;
+	font-size: 4vw;
+	user-select: none;
+}
+
+.selectBtn-hover {
+	animation: selectBtnHover 1s forwards;
+}
+
+.selectBtn-cursor {
+	transform: scale(14);
+	mix-blend-mode: difference;
+	background: $darkblack;
+	transition: transform 0.1s linear;
+}
+
+.ftb {
+	animation-name: ftb;
+	animation-duration: 10s;
+}
+
+/* Resizing and Animations */
+
+//Start of 1680px
+@media only screen and (max-width: 1680px) {
+	header,
+	main {
+		width: 100%;
+		height: 100px;
+	}
+
+
+	.slides {
+		width: 600px;
+		margin-left: 150px;
+		margin-top: 20px;
+	}
+
+	#webtitle {
+		width: 390px;
+	}
+}
+// Start of 1440px
+@media only screen and (max-width: 1440px) {
+	header,
+	main {
+		width: 100%;
+		height: 1000px;
+	}
+	#webtitle {
+		width: 335px;
+	}
+
+	.down-button {
+		margin-top: 50px;
+	}
+	.slideshow-container {
+		padding-top: 40px;
+		padding-left: 200px;
+	}
+	.slides {
+		width: 500px;
+	}
+
+	nav a {
+		font-size: size(h3);
+	}
+}
+// Start of 1024px
+@media only screen and (max-width: 1024px) {
+	header,
+	main {
+		width: 100%;
+		height: 1000px;
+	}
+
+	h2 {
+		width: 100px;
+	}
+
+	.slideshow-container {
+		padding-top: 90px;
+		padding-left: 100px;
+		width: 100px;
+	}
+	.slides {
+		width: 400px;
+	}
+	.down-button {
+		margin-top: 25px;
+		height: 300px;
+	}
+	nav a {
+		font-size: size(p1);
+	}
+
+	#webtitle {
+		transform: translate(-10%, 20%);
+		width: 210px;
+	}
+}
+
+@media only screen and (max-width: 720px) {
+	body {
+		overflow: visible;
+	}
+	header {
+		width: 100%;
+		height: 1000px;
+	}
+
+	nav {
+		font-size: size(p2);
+	}
+	#webtitle {
+		width: 125px;
+	}
+	.down-button {
+		margin-top: 0px;
+		height: 400px;
+	}
+	.slides {
+		width: 200px;
+	}
+}
+
+//Animations Start:
+//Load Image animation:
+@keyframes loadImage {
+	0% {
+		opacity: 0;
+		transform: translate(0, -300px);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+// Loading "Fan-Made Website with animation
+@keyframes loadFanMade {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+// "Fan-Made Website "cursor"/indicator
+@keyframes indicatoranimation {
+	from {
+		border-right-color: #af9e70;
+	}
+	to {
+		border-right-color: transparent;
+	}
+}
+@keyframes LoadLogo {
+	0% {
+		color: transparent;
+	}
+	100% {
+		color: #af9e70;
+	}
+}
+
+@keyframes LoadH2 {
+	from {
+		transform: translate3d(0px, -600px, 25px);
+	}
+	to {
+		transform: translate3d(0px, 0px, 0px);
+	}
+}
+
+@keyframes LoadH3 {
+	from {
+		transform: translate3d(-950px, 0px, 0px);
+	}
+	to {
+		transform: translate3d(0px, 0px, 0px);
+	}
+}
+@keyframes LoadH4 {
+	from {
+		opacity: 0;
+		transform: translate3d(0px, -50px, 0px);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0px, 0px, 0px);
+	}
+}
+
+@keyframes loadwText {
+	from {
+		opacity: 0;
+		transform: translate3d(-100px, 0px, 0px);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0px, 0px, 0px);
+	}
+}
+// LoadBrook Image
+@keyframes frameAnim {
+	0% {
+		opacity: 0;
+		border-radius: 0%;
+	}
+	25% {
+		border-radius: 42%;
+	}
+	50% {
+		border-radius: 50%;
+	}
+	75% {
+		border-radius: 42%;
+	}
+	100% {
+		opacity: 1;
+		border-radius: 50%;
+	}
+}
+
+// loading in navigation bar
+@keyframes loadNavigation {
+	0% {
+		opacity: 0;
+		transform: translate(0px, -40px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0px, 0px);
+	}
+}
+
+// fade to black (for slideshows)
+@keyframes ftb {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes selectBtnHover {
+	from {
+		opacity: 0;
+		transform: translate3d(0px, -50px, 0px);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0px, 0px, 0px);
+	}
+}
+
+@keyframes selectPLoad {
+	from {
+		transform: translate3d(-10px, 0px, 0px);
+	}
+	to {
+		transform: translate3d(0px, 0px, 0px);
+	}
+}
+
+@keyframes selectH5Load {
+	from {
+		transform: translate3d(-10px, 0px, 0px);
+	}
+	to {
+		transform: translate3d(0px, 0px, 0px);
+	}
+}
+
+@keyframes selectimgLoad {
+	from {
+		opacity: 0;
+		transform: translate3d(10px, 0px, 0px);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0px, 0px, 0px);
+	}
+}
+
+@keyframes selectTitleLoad {
+	from {
+		transform: translate3d(0px, -5px, 0px);
+	}
+	to {
+		transform: translate3d(0px, 0px, 0px);
+	}
+}
+
+@keyframes selectSubtitleLoad {
+	from {
+		transform: translate3d(0px, -5px, 0px);
+	}
+	to {
+		transform: translate3d(0px, 0px, 0px);
+	}
+}
+
+// Straw Hat Page
+
+.strawLogo {
+	position: fixed;
+	float: left;
+	z-index: 2;
+	color: white;
+	font-family: LeagueSpartan;
+	padding-left: 50px;
+	padding-top: 10px;
+	transition: color 1s ease-in;
+}
+
+.loader-bg {
+	z-index: 9999;
+	width: 100%;
+	height: 100%;
+	display: block;
+	background: transparent;
+	position: absolute;
+	float: left;
+	animation: loader-bgAnim 1s forwards 4s;
+}
+
+.loader1 {
+	z-index: 9999;
+	width: 60%;
+	height: 100%;
+	@include floatleft();
+	background: $darkergrey;
+	@include center();
+	animation: loader1anim 4s forwards;
+	div {
+		position: absolute;
+		color: white;
+		font-family: LeagueSpartan;
+		font-size: 10vw;
+		animation: loadertext1Anim 4s forwards;
+	}
+}
+
+.loader2 {
+	z-index: 9999;
+	width: 40%;
+	height: 100%;
+	background: $darkergrey;
+	@include floatleft();
+	@include center();
+	animation: loader2anim 4s forwards;
+	div {
+		opacity: 0;
+		color: white;
+		position: absolute;
+		font-family: LeagueSpartan;
+		font-size: 10vw;
+		animation: loadertext2Anim 4s forwards 0.4s;
+	}
+}
+
+#headerSH {
+	width: 100%;
+	height: 75px;
+	background: White;
+	user-select: none;
+	@include floatleft();
+}
+
+#mainSH {
+	@include floatleft();
+	height: auto;
+	width: 100%;
+	background: $darkblack;
+	user-select: none;
+	h1 {
+		color: transparent;
+		width: 55%;
+		font-family: LeagueSpartan;
+		font-size: 2vw;
+		padding-left: 50px;
+		text-transform: uppercase;
+	}
+}
+
+#SHSelect {
+	height: 800px;
+	padding-bottom: 0%;
+	width: 100%;
+	@include floatleft();
+	h2 {
+		color: white;
+		@include floatleft();
+		font-family: LeagueSpartan;
+		font-size: 2vw;
+		width: 100%;
+		margin-left: 33.33%;
+		text-transform: uppercase;
+	}
+}
+
+#characterSelect  {
+	overflow: visible;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding-left: 12.5%;
+	padding-right: 10%;
+	@include floatleft();
+}
+
+.character {
+	margin-top: 20px;
+	opacity: 0.5;
+	height: 360px;
+	width: 240px;
+	margin-left: 25px;
+	background: white;
+	img {
+		border-radius: 10px;
+	}
+}
+
+// SH 2nd Section
+
+#SHDisplay {
+	height: 1000px;
+	width: 100%;
+	@include floatleft();
+	background: $darkblack;
+	overflow: visible;
+}
+
+#separationSH {
+	position: absolute;
+	z-index: 1;
+	float: left;
+	height: 10%;
+	width: 100%;
+	background: $darkblack;
+	a {
+		position: absolute;
+		float: left;
+		height: 100px;
+		width: 100%;
+		background: $darkblack;
+		text-decoration: none;
+		cursor: none;
+	}
+}
+
+.strawHatDivs {
+	display: none;
+	z-index: 0;
+	position: absolute;
+	float: left;
+	width: 100%;
+	height: 100%;
+	padding-top: 6%;
+	background: $darkblack;
+}
+
+.contentTemplateSH {
+	width: 75%;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 80%;
+	@include floatleft();
+	background: white;
+}
+
+.characterNameTemplate {
+	width: 100%;
+	height: 10%;
+	font-family: LeagueSpartan;
+	padding-top: 10px;
+	padding-left: 10px;
+	font-size: 2.5vw;
+	text-transform: uppercase;
+}
+
+.characterTitleTemplate {
+	width: 100%;
+	height: 6%;
+	padding-left: 10px;
+	font-size: 1.6vw;
+	font-family: LibreBask;
+	color: $gold;
+}
+
+.contentPTemplateSH {
+	text-align: justify;
+	width: 100%;
+	height: 150px;
+	@include floatleft();
+	padding-top: 10px;
+	padding-left: 15px;
+	color: $darkblack;
+	font-family: Roboto;
+	font-size: 1vw;
+}
+.imgTemplateSH {
+	width: 25%;
+	height: 80%;
+	@include floatleft();
+	background: white;
+}
+
+// SH Cursor Items
+.SHImg-Hover {
+	width: 15px;
+	height: 15px;
+	padding: 10px;
+	transform: scale(-1);
+	background: white;
+	transition: transform 0.1s linear;
+}
+
+.shPirates-hover {
+	transform: scale(0.25);
+	background: $darkblack;
+	transition: transform 0.1s linear;
+}
+
+// Animation Classes
+.characterLoad-anim {
+	animation: characterLoad 1s ease-in 2s;
+}
+
+.strawNav-anim {
+	animation: loadNavigation 3s linear 2s,
+	rotate 5s linear 2s infinite;
+}
+
+.strawLogo-anim {
+	animation: strawLogo 3s linear 2.55s;
+}
+
+// 2nd Half of Straw Hat Page animations
+.loadStraw-anim {
+	animation: loadStraw 1s ease .2s;
+}
+
+.loadStrawtext-anim {
+	animation: loadStrawtext 1s ease .2s;
+}
+
+// PC RESPONSIVENESS
+
+@media only screen and(max-width: 1920px) {
+
+	#characterSelect {
+		height: 825px;
+	}
+
+	#SHDisplay {
+		height: 1000px;
+	}
+	#characterSelect {
+		height: 700px;
+	}
+
+	.character {
+		height: 330px;
+		width: 230px;
+	}
+	.strawHatDivs {
+		padding-top: 6%;
+	}
+}
+@media only screen and (max-width: 1680px) {
+	
+	#characterSelect {
+		height: 600px;
+	}
+	#SHDisplay {
+		height: 875px;
+	}
+	.character {
+		height: 290px;
+		width: 190px;
+	}
+	.strawHatDivs {
+		padding-top: 8%;
+	}
+}
+
+
+@media only screen and (max-width: 1440px) {
+	#characterSelect {
+		height: 560px;
+	}
+
+	#SHDisplay {
+		height: 775px;
+	}
+
+	.character {
+		height: 260px;
+		width: 160px;
+	}
+	.strawHatDivs {
+		padding-top: 10%;
+	}
+}
+
+@media only screen and (max-width: 1280px) {
+	
+	#characterSelect {
+		height: 520px;
+	}
+	#SHDisplay {
+		height: 675px;
+	}
+	.character {
+		height: 240px;
+		width: 140px;
+	}
+	.strawHatDivs {
+		padding-top: 8%;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	body {
+		overflow-y: visible;
+	}
+	#up-buttonSH{
+		display: none;
+	}
+
+	#characterSelect {
+		height: 490px;
+	}
+	#SHDisplay {
+		height: 675px;
+	}
+	.character {
+		height: 220px;
+		width: 120px;
+	}
+	.strawHatDivs {
+		padding-top: 18%;
+	}
+}
+
+
+@media only screen and (max-width: 720px) {
+	body {
+		overflow-y: visible;
+	}
+	#up-buttonSH{
+		display: none;
+	}
+	#characterSelect {
+		height: 305px;
+	}
+	#SHDisplay {
+		height: 475px;
+	}
+	.character {
+		height: 140px;
+		width: 80px;
+	}
+	.strawHatDivs {
+		padding-top: 18%;
+	}
+}
+
+@media only screen and (max-width: 420px) {
+	body {
+		overflow-y: visible;
+	}
+	#up-buttonSH{
+		display: none;
+	}
+	#characterSelect {
+		height: 200px;
+	}
+	#SHDisplay {
+		height: 375px;
+	}
+	.character {
+		height: 120px;
+		width: 60px;
+	}
+	.strawHatDivs {
+		padding-top: 19%;
+	}
+}
+
+
+@keyframes loadStraw {
+	from {
+		opacity: 0;
+		transform: translate3d(20px, 0px, 0px);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0px, 0px, 0px);
+	}
+}
+
+@keyframes loadStrawtext {
+	from {
+		opacity: 0;
+		transform: translate3d(-20px, 0px, 0px);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0px, 0px, 0px);
+	}
+}
+
+@keyframes characterLoad {
+	from {
+		opacity: 0;
+		transform: translate3d(-30px, 0px, 0px);
+	}
+	to {
+		opacity: 0.5;
+		transform: translate3d(0px, 0px, 0px);
+	}
+}
+
+@keyframes characterHeader {
+	from {
+		color: transparent;
+		transform: translate3d(-100px, 0px, 0px);
+	}
+	to {
+		color: $gold;
+		transform: translate3d(0px, 0px, 0px);
+	}
+}
+
+@keyframes strawNav {
+	0% {
+		opacity: 0;
+		transform: translate(0px, -40px);
+	}
+
+	50% {
+		opacity: 0.85;
+		transform: rotate3d(1, 1, 1, 2deg);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0px, 0px);
+	}
+}
+
+@keyframes strawLogo {
+	from {
+		color: $gold;
+	}
+	to {
+		color: white;
+	}
+}
+
+@keyframes loader2anim {
+	0% {
+		width: 40%;
+	}
+	25% {
+		width: 60%;
+	}
+	50% {
+		width: 70%;
+	}
+	75% {
+		width: 0%;
+	}
+	100% {
+		width: 0%;
+	}
+}
+
+@keyframes loadertext1Anim {
+	from {
+		transform: translate3d(0px, 0px, 0px);
+		opacity: 1;
+	}
+
+	to {
+		width: 0%;
+		opacity: 0;
+		transform: translate3d(4000px, 0px, 0px);
+	}
+}
+
+@keyframes loadertext2Anim {
+	from {
+		opacity: 0;
+		transform: translate3d(-420px, 0px, 0px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translate3d(5000px, 0px, 0px);
+	}
+}
+// List Page
+#listBody {
+	overflow-y: visible;
+	overflow-anchor: none;
+	user-select: none;
+}
+
+#listHeader {
+	width: 100%;
+	height: 75px;
+	@include floatleft();
+}
+.listLogo {
+	@include floatleft();
+	z-index: 2;
+	color: white;
+	font-family: LeagueSpartan;
+	padding-left: 50px;
+	padding-top: 10px;
+	transition: color 1s ease-in;
+}
+
+#listContent {
+	width: 100%;
+	height: 2650px
+}
+#listIntro {
+	@include floatleft();
+	margin-left: 50px;
+	width: 100%;
+	height: 150px;
+}
+.listIntroContentTemplate {
+	padding-top:20px;
+	@include floatleft();
+	width: 90%;
+	height: 100%;
+}
+
+.listP {
+	font-size: 0.9vw;
+	padding-left: 25px;
+	color: white;
+	font-family: LibreBask;
+	height: 90%;
+	width: 100%;
+	text-align: justify;
+	padding-right: 50px;
+	animation: loadwText 1s ease 2.18s;
+}
+#listH2 {
+	@include floatleft();
+	text-transform: uppercase;
+	padding-left: 25px;
+	padding-top: 50px;
+	font-size: 3vw;
+	font-family: LeagueSpartan;
+	color: white;
+	width: 75%;
+	margin-left: 50px;
+	animation: loadwText 1s ease 2.4s;
+
+}
+
+.carousel {
+	width: 100%;
+	height: 450px;
+	background: white;
+	@include floatleft();
+	
+}
+
+.listBtn {
+	background: #F4F4F4;
+	@include floatleft();
+	width: 100%;
+	@include center();
+}
+
+.listBtn:first-of-type {
+	margin-top: 20px;
+}
+
+.listBtn-margintop {
+	margin-top: 20px;
+}
+
+.listBtn-marginchange {
+	margin-top: 20px;
+}
+
+
+.listTitle {
+	width: 95%;
+	height: 15%;
+	padding-left: 30px;
+	padding-top: 25px;
+	color:$darkblack;
+	font-size: 3vw;
+	font-family: LeagueSpartan;
+	text-transform: uppercase;
+	@include floatleft();
+	transition: color 0.4s ease;
+}
+
+.toggleList {
+	height: 15%;
+	width: 5%;
+	@include floatleft();
+	font-size: 3vw;
+	font-family: Roboto;
+	color: $darkblack;
+	text-decoration: none;
+
+}
+.vShape{
+	width: 15px;
+	height: 15px;
+	border-left: 3px solid $darkblack;
+	border-bottom: 3px solid $darkblack;
+	transform: rotate(-45deg);
+}
+
+.subtractShape{
+	width: 15px;
+	height: 15px;
+	border-bottom: 3px solid $darkblack;
+}
+
+#yonkoL1 {
+	@include center();
+}
+
+
+.carouselLayout {
+	height: 100%;
+	width: 100%;
+	position: relative;
+
+	a{
+		position: absolute;
+		color: $darkblack;
+		text-decoration: none;
+		font-size: 3vw;
+		z-index: 1;
+	}
+}
+
+
+
+.yonkolistItem {
+	width: 20%;
+	height: 75%;
+	background: $darkblack;
+	margin-left: 55px;
+	margin-right: 30px;
+	box-shadow: -10px 10px $whiteshadow;
+}
+
+.listItem {
+	width: 80%;
+	height: 75%;
+	background: $darkblack;
+	margin-left: 50px;
+	box-shadow: -10px 10px $whiteshadow;
+}
+
+.listRating {
+	color: white;
+	font-size: 0.9vw;
+	font-family: LeagueSpartan;
+	width: 15%;
+	padding-top: 8px;
+	padding-left: 10px;
+	@include floatleft();
+}
+.listCharName {
+	color: white;
+	@include floatleft();
+	font-size: 0.8vw;
+	font-family: LeagueSpartan;
+	width: 85%;
+	padding-top: 8px;
+	padding-right: 10px;
+	padding-bottom: 8px;
+	text-align: right;
+}
+.listImg {
+	@include floatleft();
+	background: white;
+	margin-left: 5%;
+	margin-right: 5%;
+	width: 90%;
+	height: 80%;
+}
+
+
+
+// Cursor classes 
+
+.subVShape-cursor {
+	transform: scale(4);
+	opacity: 0.2;
+	transition: transform 0.2s linear;
+}
+
+.carousel-cursor {
+	background: $darkblack;
+}
+
+.arrow-cursor {
+	transform: scale(4);
+	opacity: 0.2;
+	transition: transform 0.2s linear;
+}
+
+.listItem-cursor {
+	transform: scale(2);
+	opacity: 0.2;
+	transition: transform 0.2s linear;
+}
+
+
+// Animation Classes
+.listLogo-anim {
+	animation: listLogo 3s linear 2.55s;
+}
+
+.listnav-anim {
+	animation: loadNavigation 3s linear 2s,
+	rotate 5s linear 2s infinite;
+	
+	
+}
+
+// Click/ Hover Classes
+.listTitle-click {
+	color: $darkergrey;
+	text-shadow: -3px 0px $whiteshadow;
+	transition: color 0.4s ease;
+}
+
+.listItem-hover {
+	transform: scale(1.10);
+	box-shadow: 0px 0px transparent;
+	transition: transform 0.2s ease;
+}
+.listItem-toNormal {
+	transform: scale(1);
+	transition: transform 0.2s ease;
+}
+
+.listItem-drag {
+	transform: scale(2);
+	border: 0.5px solid $whiteshadow;
+	background-color: #F4F4F4;
+	transition: background-color border transform 0.2s ease;
+}
+
+
+
+
+
+@media only screen and (max-width: 1920px){
+	.carousel {
+		height: 450px;
+	}
+}
+
+@media only screen and (max-width: 1680px){
+	.carousel {
+		height: 450px;
+	}
+}
+// PC Responsiveness
+@media only screen and (max-width: 1440px){
+.carousel {
+	height: 450px;
+}
+}
+
+@media only screen and (max-width: 1024px){
+	.carousel {
+		height: 300px;
+	}
+}
+
+@media only screen and (max-width: 720px){
+	.carousel {
+		height: 200px;
+	}
+}
+// Animations
+@keyframes listLogo {
+	from {
+		color: $gold;
+	}
+	to {
+		color: white;
+	}
+}
+
+@keyframes rotate {
+	0% {
+		transform:rotate(1deg);
+	}
+	50%{
+		transform:rotate(-1deg);
+	}
+	100%{
+		transform:rotate(1deg);
+	}
+}
+
+// List Page
+
+#galleryBody {
+	overflow: hidden;
+	user-select: none;
+}
+#galleryHeader {
+	width: 100%;
+	height:1000px;
+	@include floatleft();
+}
+
+#videoWrapper {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	z-index: -9999;
+}
+#gallery-vidbg {
+	width: 100%;
+	height: 100%;
+	opacity: 0.1;
+	animation: vidBG-anim 3.25s linear 2s;
+}
+
+#navWrapper {
+	width: 100%;
+	height: 10%;
+	position: fixed;
+	float:left;
+}
+
+#gallerySpace {
+	width: 100%;
+	height: 60%;
+	@include floatleft();
+	display:flex;
+	flex-direction: reverse;
+	align-items: flex-end;
+}
+
+#gallery-nav {
+	background: transparent;
+}
+
+.galleryLogo {
+	position: absolute;
+	float: left;
+	z-index: 2;
+	color: white;
+	font-family: LeagueSpartan;
+	padding-left: 50px;
+	padding-top: 10px;
+	transition: color 1s ease-in;
+	text-decoration: none;
+}
+
+#galleryTitle {
+	@include floatleft();
+	width: 44%;
+	height: auto;	
+	padding: 0;
+	margin: 0;
+	transform: translate(15%, 100%);
+}
+
+#galleryH2 {
+	width: 100%;
+	opacity: 0;
+	position: relative;
+	padding-left: 20px;
+	float:left;
+	z-index: 3;
+	font-size: 6vw;
+	color: white;
+	text-transform: uppercase;
+	font-family: LeagueSpartan;
+	animation: gallerysubtitle-anim 2s ease forwards 5s;
+}
+
+
+
+#galleryP {
+	width: 80%;
+	opacity: 0;
+	height: auto;
+	padding-left: 25px;
+	padding-right: 50px;
+	position: relative;
+	float:left;
+	text-align: left;
+	font-size: 2vw;
+	color: white;
+	font-family: Roboto;
+	animation: gallerysubtitle-anim 2s ease forwards 6.5s;
+}
+#galleryDown {
+	@include floatleft();
+	height: 30%;
+	width: 100%;
+}
+
+#videoSelection {
+	width: 100%;
+	position: relative;
+	float: left;
+	height:1000px;
+}
+#galleryUp {
+	height: 5%;
+	width: 100%;
+	@include floatleft();
+}
+
+.galleryItem {
+	position: relative;
+	background: $darkblack;
+	height: 100%;
+	width: 100%;
+}	 
+
+#gallerySelection {
+@include floatleft();
+}
+
+#gallerySelecth3 {
+	color:white;
+	position: absolute;
+	font-family: HelveticaNeueBold;
+	top: 15%;
+	left: 2%;
+}
+.galleryInfo {
+	opacity: 0;
+	position: absolute;
+	background: rgba(14, 8, 8, 0.5);
+	padding-top: 10px;
+	top: 70%;
+	width: 100%;
+	height: 100%;
+	transition: opacity 0.6s ease 0.3s;
+}
+
+#selectionGallery {
+	width: 100%;
+	height: 1000px;
+	@include floatleft();
+}
+
+
+#selectUp {
+	@include floatleft();
+	height: 5%;
+	width: 100%;
+}
+.galleryslctTitle {
+	@include floatleft();
+	text-transform: uppercase;
+	width: 51%;
+	height: 5%;
+	padding-left: 30px;
+	font-family: LeagueSpartan;
+	color: white;
+	font-size: 2vw;
+}
+
+.galleryslctArc{
+	padding-left: 30px;
+	width: 51%;
+	height: 5%;
+	@include floatleft();
+	font-family: LibreBask;
+	color: $gold;
+	font-size: 2vw;
+}
+.galleryslctText {
+	padding-left: 30px;
+	width: 51%;
+	height: 80%;
+	padding-right: 10%;
+	font-family: LibreBask;
+	text-align: justify;
+	@include floatleft();
+	color: white;
+	font-size: 0.9vw;
+}
+
+.selectedVideo {
+	width: 49%;
+	height: 60%;
+	@include floatleft();
+	bottom: 10%;
+}
+
+
+#gallery_video {
+	max-width: 100%;
+	width: 90%;
+	height: 80%;
+	cursor: default;
+	border: none;
+}
+
+
+
+// Hover 
+.galleryItem-hover {
+	border: 1px solid $black;
+	z-index: 1;
+	transform: scale(1.5);
+	opacity: 1;
+	transition:  transform  0.6s ease 0.3s;
+}
+
+.galleryItem-toNormal {
+	transform: scale(1);
+	z-index: 1;
+	transition: transform 0.6s ease;
+}
+
+.galleryItem:hover .galleryInfo, .galleryItem:hover .play{
+ 	opacity: 1;
+}
+
+.galleryItem:hover img {
+	opacity: 0.8;
+}
+
+
+.galleryImgTitle {
+	color: white;
+	opacity: 1;
+	@include floatleft();
+	padding-left: 10px;
+	font-size: 0.8vw;
+	width: 80%;
+	font-family: HelveticaNeueMedium;
+	letter-spacing: 0.25px;
+}
+
+.galleryImgLength {
+	opacity: 1;
+	color: white;
+	@include floatleft();
+	font-size: 0.65vw;
+	padding-left: 15px;
+	font-family: HelveticaNeueLight;
+	width: 20%;
+}
+// Click
+
+// Cursor
+.galleryItem-cursor {
+	transform: scale(1.5);
+	opacity: 1;
+	transition: transform 0.2s linear;
+	background: white;
+}
+
+//Animation Classes
+.gallerynav-anim {
+	animation: loadNavigation 3s linear 2s,
+	rotate 5s linear 2s infinite;
+}
+// Responsiveness {
+	@media only screen and (width: 1920px){
+		#galleryHeader {
+			height: 1080px;
+		}
+		#gallerySpace {
+			height: 63%;
+		}
+		
+	}
+	
+	@media only screen and (max-width: 1680px){
+		#galleryHeader {
+			height:  1050px;
+		}
+		#gallerySpace {
+			height: 50%;
+		}
+	}
+	// PC Responsiveness
+	@media only screen and (max-width: 1440px){
+		#galleryHeader {
+			height:  900px;
+		}
+	}
+	
+	@media only screen and (max-width: 1366px){
+		#galleryHeader {
+			height:  800px;
+		}
+	}
+	
+	@media only screen and (max-width: 1280px){
+		#galleryHeader {
+			height:  768px;
+		}
+	}
+	@media only screen and (max-width: 1024px){
+		#galleryHeader {
+			height:  640px;
+		}
+	}
+// Keyframes
+
+@keyframes vidBG-anim {
+	from {
+		opacity: 0.9;
+	}
+	to{ 
+		opacity: 0.1;
+	}
+ }
+	 @keyframes galleryh2-anim {
+		from {
+			opacity: 0;
+		}
+		to{ 
+			opacity: 1;
+		}
+	 }
+
+
+
+@keyframes galleryhover-anim {
+	from {
+		right: 0;
+		top: 0;
+	}
+	to {
+		right: 25px;
+		top: -15px;
+	}
+}
+	 
+	@keyframes gallerysubtitle-anim {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+// Media 

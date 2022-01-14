@@ -1,0 +1,2738 @@
+@font-face {
+  src: url(../fonts/leaguespartan-bold-webfont.woff2) format("woff2");
+  font-family: LeagueSpartan;
+}
+
+@font-face {
+  src: url(../fonts/librebaskerville-regular-webfont.woff2) format("woff2");
+  font-family: LibreBask;
+}
+
+@font-face {
+  src: url(../fonts/helvetica_neu_bold-webfont.woff2) format("woff2");
+  font-family: HelveticaNeueBold;
+}
+
+@font-face {
+  src: url(../fonts/helveticaneue_medium-webfont.woff2) format("woff2");
+  font-family: HelveticaNeueMedium;
+}
+
+@font-face {
+  src: url(../fonts/helveticaneue-webfont.woff2) format("woff2");
+  font-family: HelveticaNeue;
+}
+
+@font-face {
+  src: url(../fonts/helveticaneue_light-webfont.woff2) format("woff2");
+  font-family: HelveticaNeueLight;
+}
+
+:focus {
+  outline: none;
+}
+
+@-webkit-keyframes loader-bgAnim {
+  0% {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+  100% {
+    -webkit-transform: translate3d(0px, -1000px, 0px);
+            transform: translate3d(0px, -1000px, 0px);
+  }
+}
+
+@keyframes loader-bgAnim {
+  0% {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+  100% {
+    -webkit-transform: translate3d(0px, -1000px, 0px);
+            transform: translate3d(0px, -1000px, 0px);
+  }
+}
+
+@-webkit-keyframes loader1anim {
+  0% {
+    width: 60%;
+  }
+  25% {
+    width: 40%;
+  }
+  50% {
+    width: 30%;
+  }
+  75% {
+    width: 10%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+@keyframes loader1anim {
+  0% {
+    width: 60%;
+  }
+  25% {
+    width: 40%;
+  }
+  50% {
+    width: 30%;
+  }
+  75% {
+    width: 10%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+.cursor {
+  cursor: none;
+  pointer-events: none;
+  padding: 5px;
+  z-index: 9999;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  background: white;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#ViewPage {
+  font-size: 0.15vw;
+  font-family: LeagueSpartan;
+  text-transform: uppercase;
+  display: none;
+}
+
+.nav-hover {
+  -webkit-transform: scale(8);
+          transform: scale(8);
+  mix-blend-mode: difference;
+  background: white;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+}
+
+.heading-hover {
+  -webkit-transform: scale(20);
+          transform: scale(20);
+  mix-blend-mode: difference;
+  background: white;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+}
+
+.lg-hover {
+  -webkit-transform: scale(4);
+          transform: scale(4);
+  width: 2.3%;
+  mix-blend-mode: difference;
+  border-radius: 0%;
+  background: #af9e70;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+}
+
+.up-button-hover {
+  background: none;
+  border-radius: 0%;
+  padding: 0;
+  width: 11px;
+  height: 11px;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+  -webkit-transition: -webkit-transform 0.1s ease-in;
+  transition: -webkit-transform 0.1s ease-in;
+  transition: transform 0.1s ease-in;
+  transition: transform 0.1s ease-in, -webkit-transform 0.1s ease-in;
+}
+
+.down-button-hover {
+  padding: 0;
+  background: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 0%;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  transition: -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
+}
+
+body {
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: none;
+}
+
+html {
+  background-color: #080808;
+  scroll-behavior: smooth;
+}
+
+#mainfp {
+  max-height: 1500px;
+  height: 1500px;
+  max-width: 100%;
+  background-color: #080808;
+}
+
+#headerLandingPage h2,
+#headerLandingPage h3 {
+  width: initial;
+  font-family: LeagueSpartan;
+  font-size: 12vw;
+  color: white;
+  z-index: 1;
+}
+
+#headerLandingPage h2 {
+  width: 100%;
+  color: white;
+  height: 200px;
+}
+
+#headerLandingPage .h2-anim {
+  -webkit-animation: LoadH2 3.2s;
+          animation: LoadH2 3.2s;
+}
+
+#headerLandingPage h3 {
+  height: 200px;
+  width: 100%;
+  color: white;
+}
+
+#headerLandingPage .h3-anim {
+  -webkit-animation: LoadH3 3.2s;
+          animation: LoadH3 3.2s;
+}
+
+#headerLandingPage #webtitle {
+  position: relative;
+  float: left;
+  height: auto;
+  margin-left: 100px;
+  z-index: 99;
+}
+
+#headerLandingPage #fanMade {
+  position: relative;
+  float: left;
+  margin-top: 30%;
+  margin-left: 5%;
+  max-width: 465px;
+  border-right: 3px solid #af9e70;
+  color: #af9e70;
+  font-family: LibreBask;
+  font-size: 2vw;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#headerLandingPage .fm-anim {
+  -webkit-animation: loadFanMade 1s steps(50, end) 1s 1 normal both, indicatoranimation 1s steps(30, end) infinite;
+          animation: loadFanMade 1s steps(50, end) 1s 1 normal both, indicatoranimation 1s steps(30, end) infinite;
+}
+
+#headerfp {
+  width: 100%;
+  height: 1000px;
+}
+
+.logo {
+  position: fixed;
+  float: left;
+  z-index: 2;
+  color: #af9e70;
+  font-family: LeagueSpartan;
+  padding-left: 50px;
+  padding-top: 10px;
+  -webkit-transition: color 1s ease-in;
+  transition: color 1s ease-in;
+}
+
+.logo-anim {
+  -webkit-animation: LoadLogo 3s;
+          animation: LoadLogo 3s;
+}
+
+nav {
+  padding-top: 15px;
+  width: 100%;
+  height: 75px;
+  background-color: #080808;
+  position: relative;
+  float: left;
+}
+
+nav ul,
+nav li {
+  font-family: 'Roboto', sans-serif;
+  display: inline-block;
+  border: none;
+  list-style: none;
+  font-size: 18px;
+}
+
+nav ul {
+  float: right;
+  padding-top: 20px;
+}
+
+nav ul:hover {
+  cursor: none !important;
+}
+
+nav .nav-anim {
+  -webkit-animation: loadNavigation 1s linear, rotate 4s linear 2s infinite;
+          animation: loadNavigation 1s linear, rotate 4s linear 2s infinite;
+}
+
+nav li {
+  margin-right: 50px;
+}
+
+nav a {
+  font-family: Roboto;
+  z-index: 1;
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  cursor: none !important;
+}
+
+.slideshow-container {
+  width: 700px;
+  height: auto;
+  position: relative;
+  float: left;
+  margin: auto;
+  padding-left: 200px;
+  padding-top: 50px;
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
+  z-index: 1;
+}
+
+.slideshow-container img {
+  border-radius: 50%;
+  -webkit-animation: frameAnim 8s;
+          animation: frameAnim 8s;
+}
+
+.slideshow-anim {
+  -webkit-animation: loadImage 4s;
+          animation: loadImage 4s;
+}
+
+.slides {
+  display: none;
+  width: 700px;
+  opacity: 0.9;
+}
+
+.down-button {
+  float: left;
+  color: white;
+  text-decoration: none;
+  background: #080808;
+  width: 100%;
+  height: 200px;
+  cursor: none;
+  margin-top: 10px;
+  text-align: center;
+  padding-top: 75px;
+  font-family: Roboto;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* end of header */
+main {
+  height: 1000px;
+  width: 100%;
+  float: left;
+}
+
+#brookaside {
+  padding-top: 190.5px;
+  background-color: #af9e70;
+  float: left;
+  max-width: 20%;
+  width: 20%;
+  height: 100%;
+}
+
+#title1 {
+  text-transform: uppercase;
+  color: white;
+  position: absolute;
+  font-family: LeagueSpartan;
+  font-size: 2vw;
+  top: 350px;
+  left: 85px;
+}
+
+.select {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+}
+
+#fp1 {
+  margin: 0;
+  float: left;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: background-color 1s ease-in;
+  transition: background-color 1s ease-in;
+  background: #0e0e0e;
+}
+
+#fp1 .up-button {
+  position: relative;
+  float: left;
+  z-index: 1;
+  width: 75%;
+  height: 40px;
+  cursor: none;
+  background: #080808;
+}
+
+#fp1sec2 {
+  height: 100%;
+  width: 100%;
+  text-align: justify;
+}
+
+#fp1sec2main {
+  height: 100%;
+  width: 75%;
+  float: left;
+  background: #080808;
+}
+
+#StrawHat {
+  float: left;
+  position: absolute;
+  display: none;
+  width: 70%;
+  height: 100%;
+  padding-top: 40px;
+  padding-left: 30px;
+  -webkit-animation: selectLoad 1s;
+          animation: selectLoad 1s;
+  background-color: #080808;
+}
+
+#StrawHat h4 {
+  width: 40%;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.7vw;
+  font-family: LeagueSpartan;
+}
+
+#StrawHat .subtitle {
+  color: #af9e70;
+  font-size: 1vw;
+  text-transform: uppercase;
+  font-family: LibreBask;
+}
+
+#Yonko {
+  float: left;
+  position: absolute;
+  display: none;
+  width: 70%;
+  height: 100%;
+  padding-top: 40px;
+  padding-left: 30px;
+  -webkit-animation: selectLoad 1s;
+          animation: selectLoad 1s;
+}
+
+#Yonko h4 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.7vw;
+  font-family: LeagueSpartan;
+}
+
+#Yonko .subtitle {
+  color: #af9e70;
+  font-size: 1vw;
+  text-transform: uppercase;
+  font-family: LibreBask;
+}
+
+#Yonko p {
+  height: 70%;
+  width: 100%;
+}
+
+#Moments {
+  float: left;
+  position: absolute;
+  display: none;
+  width: 70%;
+  height: 100%;
+  padding-top: 40px;
+  padding-left: 30px;
+  -webkit-animation: selectLoad 1s;
+          animation: selectLoad 1s;
+}
+
+#Moments h4 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.7vw;
+  font-family: LeagueSpartan;
+}
+
+#Moments .subtitle {
+  color: #af9e70;
+  font-size: 1vw;
+  text-transform: uppercase;
+  font-family: LibreBask;
+}
+
+#Moments p {
+  height: 70%;
+  width: 100%;
+}
+
+.headingTemplateFP {
+  width: 100%;
+  height: 10%;
+  float: left;
+}
+
+.contentTemplateFP {
+  width: 100%;
+  height: 80%;
+}
+
+.articleTemplateFP {
+  width: 35%;
+  height: 100%;
+  float: left;
+}
+
+.articleHeadingFP {
+  color: #c2bba8;
+  width: 100%;
+  height: 7%;
+  float: left;
+  font-family: LeagueSpartan;
+  font-size: 1vw;
+  padding-top: 15px;
+  padding-left: 20px;
+  text-transform: uppercase;
+}
+
+.paragraphTemplateFP {
+  padding-left: 23px;
+  padding-right: 23px;
+  text-align: left;
+  width: 100%;
+  height: 53%;
+  float: left;
+  color: white;
+  font-family: LibreBask;
+  font-size: 0.75vw;
+}
+
+.imgTemplateFP {
+  width: 65%;
+  height: 100%;
+  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.imgBtnTemplateFP {
+  width: 25%;
+  height: 100%;
+  background: #0e0e0e;
+  float: left;
+}
+
+.btnTemplateFP {
+  position: absolute;
+  width: 10%;
+  height: 5%;
+  background: none;
+  border: none;
+}
+
+.slct-PLoad {
+  -webkit-animation: selectPLoad 0.3s linear;
+          animation: selectPLoad 0.3s linear;
+}
+
+.slct-H5Load {
+  -webkit-animation: selectH5Load 0.3s linear;
+          animation: selectH5Load 0.3s linear;
+}
+
+.slct-imgLoad {
+  -webkit-animation: selectimgLoad 0.3s linear;
+          animation: selectimgLoad 0.3s linear;
+}
+
+.slct-titleLoad {
+  -webkit-animation: selectTitleLoad 0.3s linear;
+          animation: selectTitleLoad 0.3s linear;
+}
+
+.slct-subtitleLoad {
+  -webkit-animation: selectSubtitleLoad 0.3s linear;
+          animation: selectSubtitleLoad 0.3s linear;
+}
+
+#strawHatImgContainerFP {
+  width: 80%;
+  height: 80%;
+  float: left;
+}
+
+#strawHatImgContainerFP img {
+  border-radius: 20px;
+}
+
+#listImgContainerFP {
+  width: 80%;
+  height: 80%;
+  float: left;
+}
+
+#listImgContainerFP img {
+  border-radius: 20px;
+}
+
+#galleryImgContainerFP {
+  width: 80%;
+  height: 80%;
+  float: left;
+}
+
+#galleryImgContainerFP img {
+  border-radius: 20px;
+}
+
+.slct-imgHover {
+  padding: 10px;
+  width: 20px;
+  height: 20px;
+  -webkit-transform: scale(8);
+          transform: scale(8);
+  background: white;
+  -webkit-transition: -webkit-transform 0.1s linear;
+  transition: -webkit-transform 0.1s linear;
+  transition: transform 0.1s linear;
+  transition: transform 0.1s linear, -webkit-transform 0.1s linear;
+  mix-blend-mode: luminosity;
+}
+
+#fp1sec2select {
+  width: 25%;
+  height: 100%;
+  float: left;
+  text-transform: uppercase;
+  background: #0e0e0e;
+}
+
+.setSelect {
+  width: 100%;
+  height: 15%;
+}
+
+.selectBtn {
+  background: #0e0e0e;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  width: 100%;
+  height: 100%;
+  font-family: LeagueSpartan;
+  font-size: 4vw;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.selectBtn-hover {
+  -webkit-animation: selectBtnHover 1s forwards;
+          animation: selectBtnHover 1s forwards;
+}
+
+.selectBtn-cursor {
+  -webkit-transform: scale(14);
+          transform: scale(14);
+  mix-blend-mode: difference;
+  background: #080808;
+  -webkit-transition: -webkit-transform 0.1s linear;
+  transition: -webkit-transform 0.1s linear;
+  transition: transform 0.1s linear;
+  transition: transform 0.1s linear, -webkit-transform 0.1s linear;
+}
+
+.ftb {
+  -webkit-animation-name: ftb;
+          animation-name: ftb;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+}
+
+/* Resizing and Animations */
+@media only screen and (max-width: 1680px) {
+  header,
+  main {
+    width: 100%;
+    height: 100px;
+  }
+  .slides {
+    width: 600px;
+    margin-left: 150px;
+    margin-top: 20px;
+  }
+  #webtitle {
+    width: 390px;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  header,
+  main {
+    width: 100%;
+    height: 1000px;
+  }
+  #webtitle {
+    width: 335px;
+  }
+  .down-button {
+    margin-top: 50px;
+  }
+  .slideshow-container {
+    padding-top: 40px;
+    padding-left: 200px;
+  }
+  .slides {
+    width: 500px;
+  }
+  nav a {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  header,
+  main {
+    width: 100%;
+    height: 1000px;
+  }
+  h2 {
+    width: 100px;
+  }
+  .slideshow-container {
+    padding-top: 90px;
+    padding-left: 100px;
+    width: 100px;
+  }
+  .slides {
+    width: 400px;
+  }
+  .down-button {
+    margin-top: 25px;
+    height: 300px;
+  }
+  nav a {
+    font-size: 12px;
+  }
+  #webtitle {
+    -webkit-transform: translate(-10%, 20%);
+            transform: translate(-10%, 20%);
+    width: 210px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  body {
+    overflow: visible;
+  }
+  header {
+    width: 100%;
+    height: 1000px;
+  }
+  nav {
+    font-size: 10px;
+  }
+  #webtitle {
+    width: 125px;
+  }
+  .down-button {
+    margin-top: 0px;
+    height: 400px;
+  }
+  .slides {
+    width: 200px;
+  }
+}
+
+@-webkit-keyframes loadImage {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0, -300px);
+            transform: translate(0, -300px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@keyframes loadImage {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0, -300px);
+            transform: translate(0, -300px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes loadFanMade {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes loadFanMade {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes indicatoranimation {
+  from {
+    border-right-color: #af9e70;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes indicatoranimation {
+  from {
+    border-right-color: #af9e70;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+@-webkit-keyframes LoadLogo {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: #af9e70;
+  }
+}
+
+@keyframes LoadLogo {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: #af9e70;
+  }
+}
+
+@-webkit-keyframes LoadH2 {
+  from {
+    -webkit-transform: translate3d(0px, -600px, 25px);
+            transform: translate3d(0px, -600px, 25px);
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes LoadH2 {
+  from {
+    -webkit-transform: translate3d(0px, -600px, 25px);
+            transform: translate3d(0px, -600px, 25px);
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@-webkit-keyframes LoadH3 {
+  from {
+    -webkit-transform: translate3d(-950px, 0px, 0px);
+            transform: translate3d(-950px, 0px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes LoadH3 {
+  from {
+    -webkit-transform: translate3d(-950px, 0px, 0px);
+            transform: translate3d(-950px, 0px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@-webkit-keyframes LoadH4 {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0px, -50px, 0px);
+            transform: translate3d(0px, -50px, 0px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes LoadH4 {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0px, -50px, 0px);
+            transform: translate3d(0px, -50px, 0px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@-webkit-keyframes loadwText {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100px, 0px, 0px);
+            transform: translate3d(-100px, 0px, 0px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes loadwText {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100px, 0px, 0px);
+            transform: translate3d(-100px, 0px, 0px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@-webkit-keyframes frameAnim {
+  0% {
+    opacity: 0;
+    border-radius: 0%;
+  }
+  25% {
+    border-radius: 42%;
+  }
+  50% {
+    border-radius: 50%;
+  }
+  75% {
+    border-radius: 42%;
+  }
+  100% {
+    opacity: 1;
+    border-radius: 50%;
+  }
+}
+
+@keyframes frameAnim {
+  0% {
+    opacity: 0;
+    border-radius: 0%;
+  }
+  25% {
+    border-radius: 42%;
+  }
+  50% {
+    border-radius: 50%;
+  }
+  75% {
+    border-radius: 42%;
+  }
+  100% {
+    opacity: 1;
+    border-radius: 50%;
+  }
+}
+
+@-webkit-keyframes loadNavigation {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0px, -40px);
+            transform: translate(0px, -40px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@keyframes loadNavigation {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0px, -40px);
+            transform: translate(0px, -40px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@-webkit-keyframes ftb {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes ftb {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes selectBtnHover {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0px, -50px, 0px);
+            transform: translate3d(0px, -50px, 0px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes selectBtnHover {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0px, -50px, 0px);
+            transform: translate3d(0px, -50px, 0px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@-webkit-keyframes selectPLoad {
+  from {
+    -webkit-transform: translate3d(-10px, 0px, 0px);
+            transform: translate3d(-10px, 0px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes selectPLoad {
+  from {
+    -webkit-transform: translate3d(-10px, 0px, 0px);
+            transform: translate3d(-10px, 0px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@-webkit-keyframes selectH5Load {
+  from {
+    -webkit-transform: translate3d(-10px, 0px, 0px);
+            transform: translate3d(-10px, 0px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes selectH5Load {
+  from {
+    -webkit-transform: translate3d(-10px, 0px, 0px);
+            transform: translate3d(-10px, 0px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@-webkit-keyframes selectimgLoad {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(10px, 0px, 0px);
+            transform: translate3d(10px, 0px, 0px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes selectimgLoad {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(10px, 0px, 0px);
+            transform: translate3d(10px, 0px, 0px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@-webkit-keyframes selectTitleLoad {
+  from {
+    -webkit-transform: translate3d(0px, -5px, 0px);
+            transform: translate3d(0px, -5px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes selectTitleLoad {
+  from {
+    -webkit-transform: translate3d(0px, -5px, 0px);
+            transform: translate3d(0px, -5px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@-webkit-keyframes selectSubtitleLoad {
+  from {
+    -webkit-transform: translate3d(0px, -5px, 0px);
+            transform: translate3d(0px, -5px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes selectSubtitleLoad {
+  from {
+    -webkit-transform: translate3d(0px, -5px, 0px);
+            transform: translate3d(0px, -5px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.strawLogo {
+  position: fixed;
+  float: left;
+  z-index: 2;
+  color: white;
+  font-family: LeagueSpartan;
+  padding-left: 50px;
+  padding-top: 10px;
+  -webkit-transition: color 1s ease-in;
+  transition: color 1s ease-in;
+}
+
+.loader-bg {
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: transparent;
+  position: absolute;
+  float: left;
+  -webkit-animation: loader-bgAnim 1s forwards 4s;
+          animation: loader-bgAnim 1s forwards 4s;
+}
+
+.loader1 {
+  z-index: 9999;
+  width: 60%;
+  height: 100%;
+  position: relative;
+  float: left;
+  background: #0e0e0e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: loader1anim 4s forwards;
+          animation: loader1anim 4s forwards;
+}
+
+.loader1 div {
+  position: absolute;
+  color: white;
+  font-family: LeagueSpartan;
+  font-size: 10vw;
+  -webkit-animation: loadertext1Anim 4s forwards;
+          animation: loadertext1Anim 4s forwards;
+}
+
+.loader2 {
+  z-index: 9999;
+  width: 40%;
+  height: 100%;
+  background: #0e0e0e;
+  position: relative;
+  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: loader2anim 4s forwards;
+          animation: loader2anim 4s forwards;
+}
+
+.loader2 div {
+  opacity: 0;
+  color: white;
+  position: absolute;
+  font-family: LeagueSpartan;
+  font-size: 10vw;
+  -webkit-animation: loadertext2Anim 4s forwards 0.4s;
+          animation: loadertext2Anim 4s forwards 0.4s;
+}
+
+#headerSH {
+  width: 100%;
+  height: 75px;
+  background: White;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: relative;
+  float: left;
+}
+
+#mainSH {
+  position: relative;
+  float: left;
+  height: auto;
+  width: 100%;
+  background: #080808;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#mainSH h1 {
+  color: transparent;
+  width: 55%;
+  font-family: LeagueSpartan;
+  font-size: 2vw;
+  padding-left: 50px;
+  text-transform: uppercase;
+}
+
+#SHSelect {
+  height: 800px;
+  padding-bottom: 0%;
+  width: 100%;
+  position: relative;
+  float: left;
+}
+
+#SHSelect h2 {
+  color: white;
+  position: relative;
+  float: left;
+  font-family: LeagueSpartan;
+  font-size: 2vw;
+  width: 100%;
+  margin-left: 33.33%;
+  text-transform: uppercase;
+}
+
+#characterSelect {
+  overflow: visible;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-left: 12.5%;
+  padding-right: 10%;
+  position: relative;
+  float: left;
+}
+
+.character {
+  margin-top: 20px;
+  opacity: 0.5;
+  height: 360px;
+  width: 240px;
+  margin-left: 25px;
+  background: white;
+}
+
+.character img {
+  border-radius: 10px;
+}
+
+#SHDisplay {
+  height: 1000px;
+  width: 100%;
+  position: relative;
+  float: left;
+  background: #080808;
+  overflow: visible;
+}
+
+#separationSH {
+  position: absolute;
+  z-index: 1;
+  float: left;
+  height: 10%;
+  width: 100%;
+  background: #080808;
+}
+
+#separationSH a {
+  position: absolute;
+  float: left;
+  height: 100px;
+  width: 100%;
+  background: #080808;
+  text-decoration: none;
+  cursor: none;
+}
+
+.strawHatDivs {
+  display: none;
+  z-index: 0;
+  position: absolute;
+  float: left;
+  width: 100%;
+  height: 100%;
+  padding-top: 6%;
+  background: #080808;
+}
+
+.contentTemplateSH {
+  width: 75%;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 80%;
+  position: relative;
+  float: left;
+  background: white;
+}
+
+.characterNameTemplate {
+  width: 100%;
+  height: 10%;
+  font-family: LeagueSpartan;
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 2.5vw;
+  text-transform: uppercase;
+}
+
+.characterTitleTemplate {
+  width: 100%;
+  height: 6%;
+  padding-left: 10px;
+  font-size: 1.6vw;
+  font-family: LibreBask;
+  color: #af9e70;
+}
+
+.contentPTemplateSH {
+  text-align: justify;
+  width: 100%;
+  height: 150px;
+  position: relative;
+  float: left;
+  padding-top: 10px;
+  padding-left: 15px;
+  color: #080808;
+  font-family: Roboto;
+  font-size: 1vw;
+}
+
+.imgTemplateSH {
+  width: 25%;
+  height: 80%;
+  position: relative;
+  float: left;
+  background: white;
+}
+
+.SHImg-Hover {
+  width: 15px;
+  height: 15px;
+  padding: 10px;
+  -webkit-transform: scale(-1);
+          transform: scale(-1);
+  background: white;
+  -webkit-transition: -webkit-transform 0.1s linear;
+  transition: -webkit-transform 0.1s linear;
+  transition: transform 0.1s linear;
+  transition: transform 0.1s linear, -webkit-transform 0.1s linear;
+}
+
+.shPirates-hover {
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  background: #080808;
+  -webkit-transition: -webkit-transform 0.1s linear;
+  transition: -webkit-transform 0.1s linear;
+  transition: transform 0.1s linear;
+  transition: transform 0.1s linear, -webkit-transform 0.1s linear;
+}
+
+.characterLoad-anim {
+  -webkit-animation: characterLoad 1s ease-in 2s;
+          animation: characterLoad 1s ease-in 2s;
+}
+
+.strawNav-anim {
+  -webkit-animation: loadNavigation 3s linear 2s, rotate 5s linear 2s infinite;
+          animation: loadNavigation 3s linear 2s, rotate 5s linear 2s infinite;
+}
+
+.strawLogo-anim {
+  -webkit-animation: strawLogo 3s linear 2.55s;
+          animation: strawLogo 3s linear 2.55s;
+}
+
+.loadStraw-anim {
+  -webkit-animation: loadStraw 1s ease .2s;
+          animation: loadStraw 1s ease .2s;
+}
+
+.loadStrawtext-anim {
+  -webkit-animation: loadStrawtext 1s ease .2s;
+          animation: loadStrawtext 1s ease .2s;
+}
+
+@media only screen and (max-width: 1920px) {
+  #characterSelect {
+    height: 825px;
+  }
+  #SHDisplay {
+    height: 1000px;
+  }
+  #characterSelect {
+    height: 700px;
+  }
+  .character {
+    height: 330px;
+    width: 230px;
+  }
+  .strawHatDivs {
+    padding-top: 6%;
+  }
+}
+
+@media only screen and (max-width: 1680px) {
+  #characterSelect {
+    height: 600px;
+  }
+  #SHDisplay {
+    height: 875px;
+  }
+  .character {
+    height: 290px;
+    width: 190px;
+  }
+  .strawHatDivs {
+    padding-top: 8%;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  #characterSelect {
+    height: 560px;
+  }
+  #SHDisplay {
+    height: 775px;
+  }
+  .character {
+    height: 260px;
+    width: 160px;
+  }
+  .strawHatDivs {
+    padding-top: 10%;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  #characterSelect {
+    height: 520px;
+  }
+  #SHDisplay {
+    height: 675px;
+  }
+  .character {
+    height: 240px;
+    width: 140px;
+  }
+  .strawHatDivs {
+    padding-top: 8%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  body {
+    overflow-y: visible;
+  }
+  #up-buttonSH {
+    display: none;
+  }
+  #characterSelect {
+    height: 490px;
+  }
+  #SHDisplay {
+    height: 675px;
+  }
+  .character {
+    height: 220px;
+    width: 120px;
+  }
+  .strawHatDivs {
+    padding-top: 18%;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  body {
+    overflow-y: visible;
+  }
+  #up-buttonSH {
+    display: none;
+  }
+  #characterSelect {
+    height: 305px;
+  }
+  #SHDisplay {
+    height: 475px;
+  }
+  .character {
+    height: 140px;
+    width: 80px;
+  }
+  .strawHatDivs {
+    padding-top: 18%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  body {
+    overflow-y: visible;
+  }
+  #up-buttonSH {
+    display: none;
+  }
+  #characterSelect {
+    height: 200px;
+  }
+  #SHDisplay {
+    height: 375px;
+  }
+  .character {
+    height: 120px;
+    width: 60px;
+  }
+  .strawHatDivs {
+    padding-top: 19%;
+  }
+}
+
+@-webkit-keyframes loadStraw {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(20px, 0px, 0px);
+            transform: translate3d(20px, 0px, 0px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes loadStraw {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(20px, 0px, 0px);
+            transform: translate3d(20px, 0px, 0px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@-webkit-keyframes loadStrawtext {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-20px, 0px, 0px);
+            transform: translate3d(-20px, 0px, 0px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes loadStrawtext {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-20px, 0px, 0px);
+            transform: translate3d(-20px, 0px, 0px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@-webkit-keyframes characterLoad {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-30px, 0px, 0px);
+            transform: translate3d(-30px, 0px, 0px);
+  }
+  to {
+    opacity: 0.5;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes characterLoad {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-30px, 0px, 0px);
+            transform: translate3d(-30px, 0px, 0px);
+  }
+  to {
+    opacity: 0.5;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@-webkit-keyframes characterHeader {
+  from {
+    color: transparent;
+    -webkit-transform: translate3d(-100px, 0px, 0px);
+            transform: translate3d(-100px, 0px, 0px);
+  }
+  to {
+    color: #af9e70;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes characterHeader {
+  from {
+    color: transparent;
+    -webkit-transform: translate3d(-100px, 0px, 0px);
+            transform: translate3d(-100px, 0px, 0px);
+  }
+  to {
+    color: #af9e70;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@-webkit-keyframes strawNav {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0px, -40px);
+            transform: translate(0px, -40px);
+  }
+  50% {
+    opacity: 0.85;
+    -webkit-transform: rotate3d(1, 1, 1, 2deg);
+            transform: rotate3d(1, 1, 1, 2deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@keyframes strawNav {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0px, -40px);
+            transform: translate(0px, -40px);
+  }
+  50% {
+    opacity: 0.85;
+    -webkit-transform: rotate3d(1, 1, 1, 2deg);
+            transform: rotate3d(1, 1, 1, 2deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@-webkit-keyframes strawLogo {
+  from {
+    color: #af9e70;
+  }
+  to {
+    color: white;
+  }
+}
+
+@keyframes strawLogo {
+  from {
+    color: #af9e70;
+  }
+  to {
+    color: white;
+  }
+}
+
+@-webkit-keyframes loader2anim {
+  0% {
+    width: 40%;
+  }
+  25% {
+    width: 60%;
+  }
+  50% {
+    width: 70%;
+  }
+  75% {
+    width: 0%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+@keyframes loader2anim {
+  0% {
+    width: 40%;
+  }
+  25% {
+    width: 60%;
+  }
+  50% {
+    width: 70%;
+  }
+  75% {
+    width: 0%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+@-webkit-keyframes loadertext1Anim {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+  to {
+    width: 0%;
+    opacity: 0;
+    -webkit-transform: translate3d(4000px, 0px, 0px);
+            transform: translate3d(4000px, 0px, 0px);
+  }
+}
+
+@keyframes loadertext1Anim {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+  to {
+    width: 0%;
+    opacity: 0;
+    -webkit-transform: translate3d(4000px, 0px, 0px);
+            transform: translate3d(4000px, 0px, 0px);
+  }
+}
+
+@-webkit-keyframes loadertext2Anim {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-420px, 0px, 0px);
+            transform: translate3d(-420px, 0px, 0px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(5000px, 0px, 0px);
+            transform: translate3d(5000px, 0px, 0px);
+  }
+}
+
+@keyframes loadertext2Anim {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-420px, 0px, 0px);
+            transform: translate3d(-420px, 0px, 0px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(5000px, 0px, 0px);
+            transform: translate3d(5000px, 0px, 0px);
+  }
+}
+
+#listBody {
+  overflow-y: visible;
+  overflow-anchor: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#listHeader {
+  width: 100%;
+  height: 75px;
+  position: relative;
+  float: left;
+}
+
+.listLogo {
+  position: relative;
+  float: left;
+  z-index: 2;
+  color: white;
+  font-family: LeagueSpartan;
+  padding-left: 50px;
+  padding-top: 10px;
+  -webkit-transition: color 1s ease-in;
+  transition: color 1s ease-in;
+}
+
+#listContent {
+  width: 100%;
+  height: 2650px;
+}
+
+#listIntro {
+  position: relative;
+  float: left;
+  margin-left: 50px;
+  width: 100%;
+  height: 150px;
+}
+
+.listIntroContentTemplate {
+  padding-top: 20px;
+  position: relative;
+  float: left;
+  width: 90%;
+  height: 100%;
+}
+
+.listP {
+  font-size: 0.9vw;
+  padding-left: 25px;
+  color: white;
+  font-family: LibreBask;
+  height: 90%;
+  width: 100%;
+  text-align: justify;
+  padding-right: 50px;
+  -webkit-animation: loadwText 1s ease 2.18s;
+          animation: loadwText 1s ease 2.18s;
+}
+
+#listH2 {
+  position: relative;
+  float: left;
+  text-transform: uppercase;
+  padding-left: 25px;
+  padding-top: 50px;
+  font-size: 3vw;
+  font-family: LeagueSpartan;
+  color: white;
+  width: 75%;
+  margin-left: 50px;
+  -webkit-animation: loadwText 1s ease 2.4s;
+          animation: loadwText 1s ease 2.4s;
+}
+
+.carousel {
+  width: 100%;
+  height: 450px;
+  background: white;
+  position: relative;
+  float: left;
+}
+
+.listBtn {
+  background: #F4F4F4;
+  position: relative;
+  float: left;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.listBtn:first-of-type {
+  margin-top: 20px;
+}
+
+.listBtn-margintop {
+  margin-top: 20px;
+}
+
+.listBtn-marginchange {
+  margin-top: 20px;
+}
+
+.listTitle {
+  width: 95%;
+  height: 15%;
+  padding-left: 30px;
+  padding-top: 25px;
+  color: #080808;
+  font-size: 3vw;
+  font-family: LeagueSpartan;
+  text-transform: uppercase;
+  position: relative;
+  float: left;
+  -webkit-transition: color 0.4s ease;
+  transition: color 0.4s ease;
+}
+
+.toggleList {
+  height: 15%;
+  width: 5%;
+  position: relative;
+  float: left;
+  font-size: 3vw;
+  font-family: Roboto;
+  color: #080808;
+  text-decoration: none;
+}
+
+.vShape {
+  width: 15px;
+  height: 15px;
+  border-left: 3px solid #080808;
+  border-bottom: 3px solid #080808;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.subtractShape {
+  width: 15px;
+  height: 15px;
+  border-bottom: 3px solid #080808;
+}
+
+#yonkoL1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.carouselLayout {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.carouselLayout a {
+  position: absolute;
+  color: #080808;
+  text-decoration: none;
+  font-size: 3vw;
+  z-index: 1;
+}
+
+.yonkolistItem {
+  width: 20%;
+  height: 75%;
+  background: #080808;
+  margin-left: 55px;
+  margin-right: 30px;
+  -webkit-box-shadow: -10px 10px #c6c6c6;
+          box-shadow: -10px 10px #c6c6c6;
+}
+
+.listItem {
+  width: 80%;
+  height: 75%;
+  background: #080808;
+  margin-left: 50px;
+  -webkit-box-shadow: -10px 10px #c6c6c6;
+          box-shadow: -10px 10px #c6c6c6;
+}
+
+.listRating {
+  color: white;
+  font-size: 0.9vw;
+  font-family: LeagueSpartan;
+  width: 15%;
+  padding-top: 8px;
+  padding-left: 10px;
+  position: relative;
+  float: left;
+}
+
+.listCharName {
+  color: white;
+  position: relative;
+  float: left;
+  font-size: 0.8vw;
+  font-family: LeagueSpartan;
+  width: 85%;
+  padding-top: 8px;
+  padding-right: 10px;
+  padding-bottom: 8px;
+  text-align: right;
+}
+
+.listImg {
+  position: relative;
+  float: left;
+  background: white;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  height: 80%;
+}
+
+.subVShape-cursor {
+  -webkit-transform: scale(4);
+          transform: scale(4);
+  opacity: 0.2;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+}
+
+.carousel-cursor {
+  background: #080808;
+}
+
+.arrow-cursor {
+  -webkit-transform: scale(4);
+          transform: scale(4);
+  opacity: 0.2;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+}
+
+.listItem-cursor {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  opacity: 0.2;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+}
+
+.listLogo-anim {
+  -webkit-animation: listLogo 3s linear 2.55s;
+          animation: listLogo 3s linear 2.55s;
+}
+
+.listnav-anim {
+  -webkit-animation: loadNavigation 3s linear 2s, rotate 5s linear 2s infinite;
+          animation: loadNavigation 3s linear 2s, rotate 5s linear 2s infinite;
+}
+
+.listTitle-click {
+  color: #0e0e0e;
+  text-shadow: -3px 0px #c6c6c6;
+  -webkit-transition: color 0.4s ease;
+  transition: color 0.4s ease;
+}
+
+.listItem-hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0px 0px transparent;
+          box-shadow: 0px 0px transparent;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.listItem-toNormal {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.listItem-drag {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  border: 0.5px solid #c6c6c6;
+  background-color: #F4F4F4;
+  -webkit-transition: background-color border transform 0.2s ease;
+  transition: background-color border transform 0.2s ease;
+}
+
+@media only screen and (max-width: 1920px) {
+  .carousel {
+    height: 450px;
+  }
+}
+
+@media only screen and (max-width: 1680px) {
+  .carousel {
+    height: 450px;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .carousel {
+    height: 450px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .carousel {
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .carousel {
+    height: 200px;
+  }
+}
+
+@-webkit-keyframes listLogo {
+  from {
+    color: #af9e70;
+  }
+  to {
+    color: white;
+  }
+}
+
+@keyframes listLogo {
+  from {
+    color: #af9e70;
+  }
+  to {
+    color: white;
+  }
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(1deg);
+            transform: rotate(1deg);
+  }
+  50% {
+    -webkit-transform: rotate(-1deg);
+            transform: rotate(-1deg);
+  }
+  100% {
+    -webkit-transform: rotate(1deg);
+            transform: rotate(1deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(1deg);
+            transform: rotate(1deg);
+  }
+  50% {
+    -webkit-transform: rotate(-1deg);
+            transform: rotate(-1deg);
+  }
+  100% {
+    -webkit-transform: rotate(1deg);
+            transform: rotate(1deg);
+  }
+}
+
+#galleryBody {
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#galleryHeader {
+  width: 100%;
+  height: 1000px;
+  position: relative;
+  float: left;
+}
+
+#videoWrapper {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  z-index: -9999;
+}
+
+#gallery-vidbg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  -webkit-animation: vidBG-anim 3.25s linear 2s;
+          animation: vidBG-anim 3.25s linear 2s;
+}
+
+#navWrapper {
+  width: 100%;
+  height: 10%;
+  position: fixed;
+  float: left;
+}
+
+#gallerySpace {
+  width: 100%;
+  height: 60%;
+  position: relative;
+  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: reverse;
+          flex-direction: reverse;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+#gallery-nav {
+  background: transparent;
+}
+
+.galleryLogo {
+  position: absolute;
+  float: left;
+  z-index: 2;
+  color: white;
+  font-family: LeagueSpartan;
+  padding-left: 50px;
+  padding-top: 10px;
+  -webkit-transition: color 1s ease-in;
+  transition: color 1s ease-in;
+  text-decoration: none;
+}
+
+#galleryTitle {
+  position: relative;
+  float: left;
+  width: 44%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  -webkit-transform: translate(15%, 100%);
+          transform: translate(15%, 100%);
+}
+
+#galleryH2 {
+  width: 100%;
+  opacity: 0;
+  position: relative;
+  padding-left: 20px;
+  float: left;
+  z-index: 3;
+  font-size: 6vw;
+  color: white;
+  text-transform: uppercase;
+  font-family: LeagueSpartan;
+  -webkit-animation: gallerysubtitle-anim 2s ease forwards 5s;
+          animation: gallerysubtitle-anim 2s ease forwards 5s;
+}
+
+#galleryP {
+  width: 80%;
+  opacity: 0;
+  height: auto;
+  padding-left: 25px;
+  padding-right: 50px;
+  position: relative;
+  float: left;
+  text-align: left;
+  font-size: 2vw;
+  color: white;
+  font-family: Roboto;
+  -webkit-animation: gallerysubtitle-anim 2s ease forwards 6.5s;
+          animation: gallerysubtitle-anim 2s ease forwards 6.5s;
+}
+
+#galleryDown {
+  position: relative;
+  float: left;
+  height: 30%;
+  width: 100%;
+}
+
+#videoSelection {
+  width: 100%;
+  position: relative;
+  float: left;
+  height: 1000px;
+}
+
+#galleryUp {
+  height: 5%;
+  width: 100%;
+  position: relative;
+  float: left;
+}
+
+.galleryItem {
+  position: relative;
+  background: #080808;
+  height: 100%;
+  width: 100%;
+}
+
+#gallerySelection {
+  position: relative;
+  float: left;
+}
+
+#gallerySelecth3 {
+  color: white;
+  position: absolute;
+  font-family: HelveticaNeueBold;
+  top: 15%;
+  left: 2%;
+}
+
+.galleryInfo {
+  opacity: 0;
+  position: absolute;
+  background: rgba(14, 8, 8, 0.5);
+  padding-top: 10px;
+  top: 70%;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: opacity 0.6s ease 0.3s;
+  transition: opacity 0.6s ease 0.3s;
+}
+
+#selectionGallery {
+  width: 100%;
+  height: 1000px;
+  position: relative;
+  float: left;
+}
+
+#selectUp {
+  position: relative;
+  float: left;
+  height: 5%;
+  width: 100%;
+}
+
+.galleryslctTitle {
+  position: relative;
+  float: left;
+  text-transform: uppercase;
+  width: 51%;
+  height: 5%;
+  padding-left: 30px;
+  font-family: LeagueSpartan;
+  color: white;
+  font-size: 2vw;
+}
+
+.galleryslctArc {
+  padding-left: 30px;
+  width: 51%;
+  height: 5%;
+  position: relative;
+  float: left;
+  font-family: LibreBask;
+  color: #af9e70;
+  font-size: 2vw;
+}
+
+.galleryslctText {
+  padding-left: 30px;
+  width: 51%;
+  height: 80%;
+  padding-right: 10%;
+  font-family: LibreBask;
+  text-align: justify;
+  position: relative;
+  float: left;
+  color: white;
+  font-size: 0.9vw;
+}
+
+.selectedVideo {
+  width: 49%;
+  height: 60%;
+  position: relative;
+  float: left;
+  bottom: 10%;
+}
+
+#gallery_video {
+  max-width: 100%;
+  width: 90%;
+  height: 80%;
+  cursor: default;
+  border: none;
+}
+
+.galleryItem-hover {
+  border: 1px solid #0c0c0c;
+  z-index: 1;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  opacity: 1;
+  -webkit-transition: -webkit-transform  0.6s ease 0.3s;
+  transition: -webkit-transform  0.6s ease 0.3s;
+  transition: transform  0.6s ease 0.3s;
+  transition: transform  0.6s ease 0.3s, -webkit-transform  0.6s ease 0.3s;
+}
+
+.galleryItem-toNormal {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  z-index: 1;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+}
+
+.galleryItem:hover .galleryInfo, .galleryItem:hover .play {
+  opacity: 1;
+}
+
+.galleryItem:hover img {
+  opacity: 0.8;
+}
+
+.galleryImgTitle {
+  color: white;
+  opacity: 1;
+  position: relative;
+  float: left;
+  padding-left: 10px;
+  font-size: 0.8vw;
+  width: 80%;
+  font-family: HelveticaNeueMedium;
+  letter-spacing: 0.25px;
+}
+
+.galleryImgLength {
+  opacity: 1;
+  color: white;
+  position: relative;
+  float: left;
+  font-size: 0.65vw;
+  padding-left: 15px;
+  font-family: HelveticaNeueLight;
+  width: 20%;
+}
+
+.galleryItem-cursor {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  opacity: 1;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+  background: white;
+}
+
+.gallerynav-anim {
+  -webkit-animation: loadNavigation 3s linear 2s, rotate 5s linear 2s infinite;
+          animation: loadNavigation 3s linear 2s, rotate 5s linear 2s infinite;
+}
+
+@media only screen and (width: 1920px) {
+  #galleryHeader {
+    height: 1080px;
+  }
+  #gallerySpace {
+    height: 63%;
+  }
+}
+
+@media only screen and (max-width: 1680px) {
+  #galleryHeader {
+    height: 1050px;
+  }
+  #gallerySpace {
+    height: 50%;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  #galleryHeader {
+    height: 900px;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  #galleryHeader {
+    height: 800px;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  #galleryHeader {
+    height: 768px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  #galleryHeader {
+    height: 640px;
+  }
+}
+
+@-webkit-keyframes vidBG-anim {
+  from {
+    opacity: 0.9;
+  }
+  to {
+    opacity: 0.1;
+  }
+}
+
+@keyframes vidBG-anim {
+  from {
+    opacity: 0.9;
+  }
+  to {
+    opacity: 0.1;
+  }
+}
+
+@-webkit-keyframes galleryh2-anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes galleryh2-anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes galleryhover-anim {
+  from {
+    right: 0;
+    top: 0;
+  }
+  to {
+    right: 25px;
+    top: -15px;
+  }
+}
+
+@keyframes galleryhover-anim {
+  from {
+    right: 0;
+    top: 0;
+  }
+  to {
+    right: 25px;
+    top: -15px;
+  }
+}
+
+@-webkit-keyframes gallerysubtitle-anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gallerysubtitle-anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=main.css.map */
